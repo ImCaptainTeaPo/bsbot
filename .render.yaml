@@ -1,13 +1,6 @@
 services:
   - type: web
     name: bsbot
-    runtime: python
-    buildCommand: "pip install -r requirements.txt"
-    startCommand: "python main.py"
-    region: frankfurt
-    plan: free
-    envVars:
-      - key: TOKEN
-        sync: false
-    build:
-      pythonVersion: 3.11.6
+    runtime: docker
+    buildCommand: bash build.sh
+    startCommand: venv/bin/python main.py
