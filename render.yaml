@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: bs-event-bot
+    name: bsbot
     env: python
     plan: free
     branch: main
