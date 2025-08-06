@@ -1,9 +1,13 @@
 services:
   - type: web
     name: bsbot
-    env: python
+    runtime: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "python main.py"
+    region: frankfurt
     plan: free
-    branch: main
-    buildCommand: pip install -r requirements.txt
-    startCommand: python main.py
-    pythonVersion: 3.10.12
+    envVars:
+      - key: TOKEN
+        sync: false
+    build:
+      pythonVersion: 3.10.12
